@@ -1,0 +1,30 @@
+server:
+  port: 8761  # eureka默认端口
+
+spring:
+  cloud:
+    config:
+      server:
+#        git:
+#          uri: https://github.com/jusang-maker/SpringCloudConfig.git
+#          username: jusang-maker
+#          password: liao1598753
+#      label: main
+
+  application:
+    name: eureka-comsumer # 应用名称
+#  rabbitmq:
+#    host: 139.224.162.52
+#    port: 5672
+#    username: guest
+#    password: guest
+eureka:
+  client:
+    service-url:
+      defaultzone: http://localhost:8761/eureka
+    register-with-eureka: true # 是否将自己注册到Eureka服务器中，本身是服务器，无 需注册
+feign:
+  hystrix:
+    enabled: true
+
+
